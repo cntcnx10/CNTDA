@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Logistics Portfolio | Natthida</title>
+    <!-- Google Fonts: Orbitron สำหรับหัวข้อ และ Montserrat สำหรับเนื้อหา -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --midnight-blue: #0a0e1a;
+            --space-dark: #05070a;
+            --safety-orange: #ff6600;
+            --metallic-silver: #c0c0c0;
+            --neon-blue: #00f2ff;
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --grid-color: rgba(0, 242, 255, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--space-dark);
+            color: #ffffff;
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+            /* Background Grid Effect */
+            background-image: 
+                linear-gradient(var(--grid-color) 1px, transparent 1px),
+                linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+            background-size: 50px 50px;
+        }
+
+        /* Scanline Animation Effect */
+        body::before {
+            content: " ";
+            display: block;
+            position: fixed;
+            top: 0; left: 0; bottom: 0; right: 0;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+            z-index: 9999;
+            background-size: 100% 4px, 3px 100%;
+            pointer-events: none;
+        }
+
+        header {
+            height: 40vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            border-bottom: 2px solid var(--safety-orange);
+            background: radial-gradient(circle, var(--midnight-blue) 0%, var(--space-dark) 100%);
+        }
+
+        h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5rem;
+            color: var(--neon-blue);
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            text-shadow: 0 0 10px var(--neon-blue);
+        }
+
+        .student-id {
+            color: var(--safety-orange);
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.2rem;
+            margin-top: 10px;
+        }
+
+        .slogan {
+            margin-top: 15px;
+            font-style: italic;
+            color: var(--metallic-silver);
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: -50px auto 50px;
+            padding: 20px;
+        }
+
+        section {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-left: 4px solid var(--neon-blue);
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 4px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        h2 {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--safety-orange);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            text-transform: uppercase;
+            font-size: 1.2rem;
+        }
+
+        h2::before {
+            content: ">> ";
+            margin-right: 10px;
+            color: var(--neon-blue);
+        }
+
+        /* Skills Progress Bar */
+        .skill-item {
+            margin-bottom: 20px;
+        }
+
+        .skill-name {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+            font-size: 0.9rem;
+        }
+
+        .progress-bg {
+            background: rgba(255,255,255,0.1);
+            height: 10px;
+            border-radius: 5px;
+            overflow: hidden;
+            border: 1px solid var(--metallic-silver);
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--neon-blue), var(--safety-orange));
+            box-shadow: 0 0 10px var(--neon-blue);
+        }
+
+        /* Dashboard Experience List */
+        .exp-item {
+            border-bottom: 1px dashed rgba(255,255,255,0.2);
+            padding: 15px 0;
+        }
+
+        .exp-item:last-child { border: none; }
+
+        .exp-date {
+            color: var(--neon-blue);
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.8rem;
+        }
+
+        /* Neon Button */
+        .btn-contact {
+            display: inline-block;
+            padding: 12px 30px;
+            border: 2px solid var(--neon-blue);
+            color: var(--neon-blue);
+            text-decoration: none;
+            font-family: 'Orbitron', sans-serif;
+            text-transform: uppercase;
+            transition: 0.3s;
+            background: transparent;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .btn-contact:hover {
+            background: var(--neon-blue);
+            color: var(--space-dark);
+            box-shadow: 0 0 20px var(--neon-blue);
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: var(--metallic-silver);
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 1.8rem; }
+            .container { margin-top: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Natthida Apiwongngam</h1>
+        <div class="student-id">ID: 6650100030</div>
+        <p class="slogan">"Bridging Galaxies through Precision Logistics"</p>
+    </header>
+
+    <div class="container">
+        <!-- About Me Section -->
+        <section id="about">
+            <h2>System Profile: Specialist</h2>
+            <p><strong>ตำแหน่ง:</strong> ผู้เชี่ยวชาญการจัดการคลังสินค้าระหว่างดวงดาว (Interstellar Warehouse Specialist)</p>
+            <p style="margin-top: 10px;">มุ่งเน้นการเพิ่มประสิทธิภาพซัพพลายเชนข้ามกาแล็กซี ด้วยประสบการณ์การบริหารจัดการพัสดุในสภาวะไร้น้ำหนักและการสื่อสารผ่านระบบควอนตัม พร้อมนำพาสินค้าของคุณถึงที่หมายไม่ว่าพิกัดนั้นจะไกลเพียงใด</p>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills">
+            <h2>Core Capabilities</h2>
+            
+            <div class="skill-item">
+                <div class="skill-name"><span>Spacecraft Piloting & Navigation</span><span>95%</span></div>
+                <div class="progress-bg"><div class="progress-fill" style="width: 95%;"></div></div>
+            </div>
+
+            <div class="skill-item">
+                <div class="skill-name"><span>Warehouse Management (Interstellar)</span><span>90%</span></div>
+                <div class="progress-bg"><div class="progress-fill" style="width: 90%;"></div></div>
+            </div>
+
+            <div class="skill-item">
+                <div class="skill-name"><span>Intermediate Chinese (HSK Space-Edition)</span><span>75%</span></div>
+                <div class="progress-bg"><div class="progress-fill" style="width: 75%;"></div></div>
+            </div>
+
+            <div class="skill-item">
+                <div class="skill-name"><span>Forklift Operation (Class IV - Deep Space)</span><span>85%</span></div>
+                <div class="progress-bg"><div class="progress-fill" style="width: 85%;"></div></div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience">
+            <h2>Mission Logs (Experience)</h2>
+            <div class="exp-item">
+                <div class="exp-date">EARTH-YEAR 2025 - PRESENT</div>
+                <p><strong>Senior Logistics Controller @ PIM Space Station</strong></p>
+                <p>ดูแลระบบคลังสินค้าอัตโนมัติและจัดการเส้นทางเดินยานขนส่งในเขตรางดาวเคราะห์น้อย</p>
+            </div>
+            <div class="exp-item">
+                <div class="exp-date">EARTH-YEAR 2024</div>
+                <p><strong>Warehouse Operator @ Samut Sakhon Ground Base</strong></p>
+                <p>บริหารจัดการคลังสินค้าภาคพื้นดินและประสานงานการส่งออกทรัพยากรไปยังสถานีอวกาศนานาชาติ</p>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" style="text-align: center;">
+            <h2>Establishing Connection</h2>
+            <p>Signal Frequency: 444.09-Logi</p>
+            <p>Coordinates: Sector 7, Central Mahachai Cluster</p>
+            <br>
+            <a href="#" class="btn-contact">Send Transmission</a>
+        </section>
+    </div>
+
+    <footer>
+        &copy; 2026 INTERSTELLAR LOGISTICS DIVISION | ALL RIGHTS RESERVED
+    </footer>
+
+</body>
+</html>
