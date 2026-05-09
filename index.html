@@ -59,7 +59,6 @@
             background: radial-gradient(circle, var(--midnight-blue) 0%, var(--space-dark) 100%);
         }
 
-        /* --- Profile Image Style --- */
         .profile-frame {
             width: 180px;
             height: 180px;
@@ -119,16 +118,17 @@
             font-size: 1.1rem;
         }
 
-        /* --- Content Image Style --- */
         .content-image {
             width: 100%;
-            height: 250px;
+            height: 300px;
             object-fit: cover;
             border: 1px solid var(--neon-blue);
             border-radius: 4px;
             margin: 15px 0;
-            filter: sepia(20%) hue-rotate(160deg) brightness(0.8); /* ย้อมสีให้เข้ากับธีมฟ้า */
+            filter: sepia(20%) hue-rotate(160deg) brightness(0.9);
             transition: 0.3s;
+            display: block; /* มั่นใจว่ารูปแสดงผลเป็น Block */
+            background: #111; /* สีพื้นหลังระหว่างรอรูปโหลด */
         }
 
         .content-image:hover {
@@ -136,7 +136,6 @@
             border-color: var(--safety-orange);
         }
 
-        /* Skills */
         .skill-item { margin-bottom: 15px; }
         .skill-name { display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 5px; }
         .progress-bg { background: rgba(255,255,255,0.1); height: 8px; border-radius: 4px; border: 1px solid var(--metallic-silver); overflow: hidden; }
@@ -165,16 +164,16 @@
         @media (max-width: 600px) {
             h1 { font-size: 1.5rem; }
             .profile-frame { width: 140px; height: 140px; }
+            .content-image { height: 200px; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <!-- ส่วนใส่รูปโปรไฟล์ -->
         <div class="profile-frame">
-            <!-- เปลี่ยน URL รูปภาพตรง src -->
-            <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=500" alt="Natthida Profile" class="profile-img">
+            <!-- ใช้รูป Placeholder ที่เสถียรกว่า ถ้ามีรูปตัวเองให้เอามาใส่แทนที่นี่ -->
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400" alt="Natthida Profile" class="profile-img">
         </div>
         <h1>Natthida Apiwongngam</h1>
         <div class="student-id">ID: 6650100030</div>
@@ -193,16 +192,16 @@
             <div style="border-bottom: 1px dashed rgba(255,255,255,0.2); padding-bottom: 20px; margin-bottom: 20px;">
                 <p style="color: var(--neon-blue); font-family: 'Orbitron'; font-size: 0.8rem;">EARTH-YEAR 2025</p>
                 <p><strong>Senior Logistics Controller @ PIM Space Station</strong></p>
-                <!-- รูปประกอบประสบการณ์ 1 -->
-                <img src="https://images.unsplash.com/photo-1493946747784-a5a52093d303?q=80&w=800" class="content-image" alt="Space Logistics">
+                <!-- รูป 1: สถานีอวกาศ/เทคโนโลยี -->
+                <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800" class="content-image" alt="Space Logistics">
                 <p>ควบคุมดูแลระบบหุ่นยนต์ลำเลียงสินค้าในสถานีอวกาศ</p>
             </div>
 
             <div>
                 <p style="color: var(--neon-blue); font-family: 'Orbitron'; font-size: 0.8rem;">EARTH-YEAR 2024</p>
                 <p><strong>Ground Base Support @ Samut Sakhon Base</strong></p>
-                <!-- รูปประกอบประสบการณ์ 2 -->
-                <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=800" class="content-image" alt="Warehouse Operation">
+                <!-- รูป 2: คลังสินค้าไฮเทค -->
+                <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&q=80&w=800" class="content-image" alt="Warehouse Operation">
                 <p>บริหารจัดการคลังสินค้าภาคพื้นดินและระบบ Forklift อัตโนมัติ</p>
             </div>
         </section>
@@ -226,7 +225,7 @@
         <section style="text-align: center;">
             <h2>>> Communication</h2>
             <p>Signal Frequency: 444.09-Logi</p>
-            <a href="#" class="btn-contact">Send Transmission</a>
+            <a href="mailto:your-email@example.com" class="btn-contact">Send Transmission</a>
         </section>
     </div>
 
